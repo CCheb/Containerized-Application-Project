@@ -1,8 +1,6 @@
 services:
   app:
     image: wordpress:php8.1-apache
-    deploy:
-      replicas: 3
     ports:
       - "8080:80"
     environment:
