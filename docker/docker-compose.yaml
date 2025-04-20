@@ -18,7 +18,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - dbdata:/var/lib/mysql
+      - /mnt/docker/db:/var/lib/mysql #bind mount to LVM-backed volume
     networks:
       - backend
 
@@ -32,9 +32,6 @@ services:
       - app
     networks:
       - backend
-
-volumes:
-  dbdata:
 
 networks:
   backend:
