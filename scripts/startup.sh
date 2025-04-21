@@ -28,7 +28,7 @@ cd /home/amsebastian12
 # Clone or pull repo
 if [ -d "Containerized-Application-Project" ]; then
   echo "Project repo already exists. Pulling updates..." | tee -a "$LOGFILE"
-  cd Containerized-Project && git pull | tee -a "$LOGFILE"
+  cd Containerized-Application-Project && git pull | tee -a "$LOGFILE"
 else
   echo "Cloning project repo..." | tee -a "$LOGFILE"
   git clone https://github.com/CCheb/Containerized-Application-Project.git | tee -a "$LOGFILE"
