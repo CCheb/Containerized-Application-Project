@@ -1,12 +1,12 @@
 #!/bin/bash
 
 LOGFILE="/var/log/deploy.log"
-DB_CONTAINER_NAME="containerized-application-project-db-1"  # Match docker-compose name
-BACKUP_FILE="/home/ubuntu/mysql_backup.sql"
+DB_CONTAINER_NAME="wordpress_db"  # Match docker-compose name
+BACKUP_FILE="/home/amsebastian12/mysql_backup.sql"
 
 echo "Deployment started at $(date)" | tee -a "$LOGFILE"
 
-cd /home/ubuntu/Containerized-Application-Project || exit
+cd /home/amsebastian12/Containerized-Project || exit
 
 # Backup existing database if container is running
 if docker ps --format '{{.Names}}' | grep -q "$DB_CONTAINER_NAME"; then
@@ -17,8 +17,8 @@ fi
 
 # Restart Docker containers
 echo "Restarting Docker stack..." | tee -a "$LOGFILE"
-docker-compose down | tee -a "$LOGFILE"
-docker-compose up -d --build --scale app=3 | tee -a "$LOGFILE"
+docker compose down | tee -a "$LOGFILE"
+docker compose up -d --build --scale app=3 | tee -a "$LOGFILE"
 
 # Restore database if backup exists and container is up
 if [ -f "$BACKUP_FILE" ]; then

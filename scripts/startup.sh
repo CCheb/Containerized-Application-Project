@@ -5,9 +5,9 @@ LOGFILE="/var/log/deploy.log"
 echo "Startup script started at $(date)" | tee -a "$LOGFILE"
 
 # Run the LVM configuration script (before Docker setup)
-if [ -f "/home/ubuntu/configure-lvm.sh" ]; then
+if [ -f "/home/amsebastian12/configure-lvm.sh" ]; then
   echo "Running LVM configuration..." | tee -a "$LOGFILE"
-  bash /home/ubuntu/configure-lvm.sh | tee -a "$LOGFILE"
+  bash /home/amsebastian12/configure-lvm.sh | tee -a "$LOGFILE"
 else
   echo "LVM configuration script not found!" | tee -a "$LOGFILE"
   exit 1
@@ -23,16 +23,16 @@ systemctl start docker
 # Add ubuntu to docker group
 usermod -aG docker ubuntu
 
-cd /home/ubuntu
+cd /home/amsebastian12
 
 # Clone or pull repo
 if [ -d "Containerized-Application-Project" ]; then
   echo "Project repo already exists. Pulling updates..." | tee -a "$LOGFILE"
-  cd Containerized-Application-Project && git pull | tee -a "$LOGFILE"
+  cd Containerized-Project && git pull | tee -a "$LOGFILE"
 else
   echo "Cloning project repo..." | tee -a "$LOGFILE"
   git clone https://github.com/CCheb/Containerized-Application-Project.git | tee -a "$LOGFILE"
-  cd Containerized-Application-Project
+  cd Containerized-Application-Project/scripts
 fi
 
 # Make deploy.sh executable
