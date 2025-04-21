@@ -1,0 +1,50 @@
+commit ef4516a58ce8aaa13bb4da38e61671fd2576851e
+Author: DChaney2173 <145802390+DChaney2173@users.noreply.github.com>
+Date:   Sun Apr 20 01:53:39 2025 -0400
+
+    Added one step in README.md that I forgot.
+
+commit a1c96a713ebdc254c98a4ae7915525b6cfd271bf
+Author: DChaney2173 <145802390+DChaney2173@users.noreply.github.com>
+Date:   Sun Apr 20 01:50:36 2025 -0400
+
+    Finished automating setup(Hopefully)
+    
+    Check the README.md for steps. However, all scripts have been updated/created and yaml file has been edited to reflect changes.
+
+commit d3f83787e6d2ef756609d1d095950f092fadc0af
+Author: Sebastian <amsebastian12@gmail.com>
+Date:   Sat Apr 19 18:00:35 2025 -0400
+
+    added auto script that runs docker automatically
+
+commit 9dacbf4ede134f9e842c996c0d958bd01383b5a4
+Author: AntonioRocher <arocher.hernandez@gmail.com>
+Date:   Sat Apr 19 16:42:30 2025 -0400
+
+    Implemented load balancer (HAProxy
+    ) and replicas of application
+
+commit acf86f88bac7e6f0757b984594155d2f1b43ce6e
+Author: AntonioRocher <arocher.hernandez@gmail.com>
+Date:   Tue Apr 15 17:01:56 2025 -0400
+
+    Added nginx configuration file, still need to add it to yaml file
+
+commit 1e4fa8f83ef19f4922fd0e033d207a492edbce60
+Author: AntonioRocher <arocher.hernandez@gmail.com>
+Date:   Tue Apr 15 16:19:25 2025 -0400
+
+    Added 3 replicas to deploy
+
+commit 7f1f963d75abdd33bb6ffb94f0cc52e9f8efb885
+Author: AntonioRocher <arocher.hernandez@gmail.com>
+Date:   Tue Apr 15 16:02:15 2025 -0400
+
+    Set up Docker for WordPress and MySQL, also added script files
+
+commit 0433d022ea75f9b74fae6ee44cfe19bc7b915416
+Author: CCheb <151454253+CCheb@users.noreply.github.com>
+Date:   Mon Apr 14 17:50:38 2025 -0400
+
+    Create README.md
