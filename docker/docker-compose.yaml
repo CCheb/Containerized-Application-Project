@@ -1,7 +1,7 @@
-version: "3.8"
+version: "3.8" # Compose file format version
 
 services:
-  app:
+  app: # WordPress application service
     image: wordpress:php8.1-apache
     environment:
       WORDPRESS_DB_HOST: db:3306
@@ -9,8 +9,8 @@ services:
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
     networks:
-      - backend
-  db:
+      - backend # Connect to the backend Docker network
+  db: # MySQL database service
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -20,18 +20,18 @@ services:
     volumes:
       - /mnt/docker/db:/var/lib/mysql #bind mount to LVM-backed volume
     networks:
-      - backend
+      - backend # Connect to the backend Docker network
 
-  haproxy:
+  haproxy: # Load balancer service
     image: haproxy:alpine
     ports:
       - "8080:8080"  # Expose HAProxy on host port 8080
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     depends_on:
-      - app
+      - app # Ensure the WordPress app starts before HAProxy
     networks:
       - backend
 
 networks:
-  backend:
+  backend: # Define shared user-defined bridge network
