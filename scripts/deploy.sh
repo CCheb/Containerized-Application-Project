@@ -10,7 +10,7 @@ cd /home/ubuntu/Containerized-Application-Project || exit
 
 # Backup existing database if container is running
 if docker ps --format '{{.Names}}' | grep -q "$DB_CONTAINER_NAME"; then
-  echo "💾 Backing up MySQL database..." | tee -a "$LOGFILE"
+  echo "Backing up MySQL database..." | tee -a "$LOGFILE"
   docker exec "$DB_CONTAINER_NAME" \
     sh -c 'exec mysqldump -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' > "$BACKUP_FILE"
 fi
