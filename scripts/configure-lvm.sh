@@ -6,10 +6,10 @@ VG_NAME="docker_vg"
 
 # Define apps with name, size, and mount path
 declare -A apps=(
-  [app1_data]="10G:/mnt/docker/app1"
-  [app2_data]="15G:/mnt/docker/app2"
-  [app3_data]="20G:/mnt/docker/app3"
-  [db_data]="25G:/mnt/docker/db"
+  [app1_data]="2G:/mnt/docker/app1"
+  [app2_data]="2G:/mnt/docker/app2"
+  [app3_data]="2G:/mnt/docker/app3"
+  [db_data]="2G:/mnt/docker/db"
 )
 
 # Exit on error
