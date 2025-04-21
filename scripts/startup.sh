@@ -39,4 +39,4 @@ fi
 chmod +x /home/amsebastian12/deploy.sh
 
 # Run deploy script and log output
-/home/amsebastian12/deploy.sh | tee -a "$LOGFILE"
+sudo /home/amsebastian12/deploy.sh | tee -a "$LOGFILE"
