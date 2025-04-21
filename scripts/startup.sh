@@ -36,7 +36,7 @@ else
 fi
 
 # Make deploy.sh executable
-chmod +x /home/amsebastian12/deploy.sh
+chmod +x deploy.sh
 
 # Run deploy script and log output
-sudo /home/amsebastian12/deploy.sh | tee -a "$LOGFILE"
+sudo ./deploy.sh | tee -a "$LOGFILE"
